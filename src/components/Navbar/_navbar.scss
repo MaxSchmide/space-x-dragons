@@ -1,0 +1,187 @@
+@import "../../vars";
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  margin-bottom: 20px;
+  .hamburger-lines {
+    display: none;
+    position: relative;
+    margin: 0 15px;
+    height: 16px;
+    width: 22px;
+    .line {
+      display: none;
+      height: 2px;
+      width: 100%;
+      border-radius: 10px;
+      background: $primary;
+    }
+
+    .line1 {
+      transform-origin: 0% 0%;
+      transition: transform 0.4s ease-in-out;
+    }
+    .line2 {
+      transition: transform 0.2s ease-in-out;
+    }
+    .line3 {
+      transform-origin: 0% 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+  &__logo {
+    background-color: transparent;
+    height: 100%;
+    img {
+      width: 150px;
+      height: 100%;
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 30px;
+    height: 100%;
+    text-transform: uppercase;
+    .item {
+      list-style: none;
+      text-decoration: none;
+      &__link {
+        position: relative;
+        color: $primary;
+        text-decoration: none;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background: $secondary;
+          transform: scaleX(0);
+          transition: transform 0.5s ease-in-out;
+          transform-origin: right;
+        }
+        &:hover::before {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+    .close {
+      display: none;
+    }
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    img {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .profile-btn {
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    .btn {
+      @include signBtn;
+    }
+  }
+}
+
+@media (max-width: $breakpoint992) {
+  .navbar {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: $breakpoint768) {
+  .navbar {
+    height: 75px;
+    font-size: 0.8em;
+    &__logo {
+      img {
+        width: 100px;
+      }
+    }
+    &__user {
+      .profile-btn {
+        height: 30px;
+        width: 30px;
+      }
+      img {
+        width: 50px;
+      }
+      .btn {
+        font-size: 0.6em;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint426) {
+  .navbar {
+    height: 75px;
+    font-size: 0.5em;
+    // padding: 0 2em;
+    justify-content: space-between;
+    &__logo {
+      img {
+        padding-left: 20px;
+        width: 150px;
+      }
+    }
+    &__menu {
+      margin: 0;
+      font-size: 2em;
+      position: fixed;
+      top: 0px;
+      left: -1000px;
+      transition: 0.3s;
+      padding: 50px 100px 0 100px;
+      flex-direction: column;
+      background-color: $secondary;
+      .close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+    &__user {
+      .profile-btn {
+        height: 50px;
+        width: 50px;
+      }
+      img {
+        width: 80px;
+      }
+      .btn {
+        border-radius: 20px;
+        font-size: 1.6em;
+      }
+    }
+    .active {
+      transition: 0.3s;
+      left: 0px;
+    }
+    .hamburger-lines {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      height: 20px;
+      .line {
+        height: 3px;
+        display: block;
+      }
+    }
+  }
+}

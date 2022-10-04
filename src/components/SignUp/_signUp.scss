@@ -1,0 +1,105 @@
+@import "../../vars";
+
+.signup-window {
+  width: 450px;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid $secondary;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  &__logo {
+    padding-top: 20px;
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  &__form {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 80%;
+    padding: 50px 20px 10px 20px;
+    &__input {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid $secondary;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      &.error {
+        border-color: red;
+      }
+
+      input[type="password"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px 10px;
+        border: none;
+        outline: none;
+      }
+
+      .feedback {
+        bottom: -20px;
+        left: 30px;
+        position: absolute;
+        color: rgb(235, 54, 54);
+        font-size: 14px;
+      }
+    }
+
+    button[type="submit"] {
+      background-color: $primary;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px auto;
+      border: none;
+      cursor: pointer;
+      width: 60%;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    .link {
+      margin: auto;
+    }
+  }
+}
+@media (max-width: $breakpoint426) {
+  .signup-window {
+    width: 80%;
+    &__logo {
+      text-align: center;
+      font-size: 2em;
+      img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+    &__form {
+      font-size: 2em;
+      &__input {
+        input[type="password"],
+        input[type="email"] {
+          padding: 2em 2em;
+          height: 2em;
+          &::placeholder {
+            font-size: 1em;
+          }
+        }
+      }
+      button[type="submit"] {
+        font-size: 1em;
+        border-radius: 20px;
+      }
+      .link {
+        text-align: center;
+      }
+    }
+  }
+}

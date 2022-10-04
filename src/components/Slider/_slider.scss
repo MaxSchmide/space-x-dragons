@@ -1,0 +1,23 @@
+.slider-container {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__window {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .all-slides-container {
+      height: 100%;
+      transition: translate;
+      transition-property: transform;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

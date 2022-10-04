@@ -1,0 +1,26 @@
+@import "../../_vars";
+header {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.logo {
+  height: 100%;
+  img {
+    height: 100%;
+    width: 150px;
+  }
+}
+@media (max-width: $breakpoint426) {
+  header {
+    height: 150px;
+    margin-bottom: 0;
+  }
+  .logo {
+    img {
+      width: 250px;
+    }
+  }
+}

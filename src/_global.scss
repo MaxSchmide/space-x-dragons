@@ -1,0 +1,30 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital@0;1&display=swap");
+@import "./vars";
+body,
+html {
+  font-family: "Kanit", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: $breakpoint992) {
+  .container {
+    width: 950px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: $breakpoint768) {
+  .container {
+    width: 720px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: $breakpoint426) {
+  .container {
+    width: 100%;
+  }
+}

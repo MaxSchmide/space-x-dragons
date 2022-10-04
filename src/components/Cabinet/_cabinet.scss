@@ -1,0 +1,39 @@
+@import "../../vars";
+.user {
+  display: flex;
+  gap: 20px;
+  .sidebar {
+    padding: 20px 5px;
+    width: 25%;
+    border-right: 1px solid $secondary;
+
+    &__avatar {
+      height: fit-content;
+      text-align: center;
+      margin-bottom: 20px;
+      img {
+        width: 80%;
+        border-radius: 50%;
+      }
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        padding: 10px 5px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          background: rgba($color: $secondary, $alpha: 0.2);
+        }
+      }
+      .active {
+        background: rgba($color: $secondary, $alpha: 0.5);
+      }
+    }
+  }
+  .main {
+    width: 75%;
+  }
+}

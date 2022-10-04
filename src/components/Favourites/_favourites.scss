@@ -1,0 +1,32 @@
+.box {
+  margin-top: 50px !important;
+  width: 60%;
+  margin: 0 auto;
+}
+.accordion {
+  border: none !important;
+}
+
+.accordion__item + .accordion__item {
+  border-top: none !important;
+  margin-top: 2px !important;
+}
+
+.accordion__button {
+  background-color: #f4f4f4;
+  color: #444;
+  cursor: pointer;
+  padding: 18px 5px !important;
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+.remove {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  &:hover {
+    font-style: italic;
+  }
+}
