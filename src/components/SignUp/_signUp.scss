@@ -73,6 +73,7 @@
 @media (max-width: $breakpoint426) {
   .signup-window {
     width: 80%;
+    border: none;
     &__logo {
       text-align: center;
       font-size: 2em;
@@ -86,18 +87,19 @@
       &__input {
         input[type="password"],
         input[type="email"] {
-          padding: 2em 2em;
-          height: 2em;
+          padding: 1em 2em;
+          height: 1.7em;
           &::placeholder {
             font-size: 1em;
           }
         }
       }
       button[type="submit"] {
-        font-size: 1em;
+        font-size: 0.5em;
         border-radius: 20px;
       }
       .link {
+        font-size: 0.5em;
         text-align: center;
       }
     }

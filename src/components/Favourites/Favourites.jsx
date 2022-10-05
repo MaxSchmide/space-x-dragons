@@ -21,7 +21,7 @@ const Favourites = () => {
 
   return (
     <div className='box'>
-      {favourites ? (
+      {favourites.length ? (
         <Accordion allowZeroExpanded>
           {favourites?.map((fav) => (
             <AccordionItem key={fav.id}>

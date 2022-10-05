@@ -93,29 +93,38 @@
 @media (max-width: $breakpoint426) {
   .window {
     width: 80%;
+    border: none;
     &__logo {
       text-align: center;
-      font-size: 2em;
+      font-size: 1em;
       img {
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
       }
     }
     &__form {
-      font-size: 2em;
+      font-size: 1em;
       &__input {
         input[type="password"],
         input[type="email"] {
-          padding: 2em 4em;
-          height: 2em;
+          padding: 1em 2em;
+          height: 1.7em;
           &::placeholder {
-            font-size: 2em;
+            font-size: 1em;
+          }
+          &:focus,
+          &.has-value {
+            transition: 0.2s ease-in;
+            padding: 1em 1em;
           }
         }
       }
       button[type="submit"] {
         font-size: 1.5em;
         border-radius: 20px;
+      }
+      &__google {
+        border-top: none;
       }
     }
   }

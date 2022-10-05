@@ -15,6 +15,18 @@
         width: 80%;
         border-radius: 50%;
       }
+      .altlogo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: $secondary;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: white;
+      }
     }
     &__menu {
       display: flex;
@@ -35,5 +47,21 @@
   }
   .main {
     width: 75%;
+  }
+}
+
+@media (max-width: $breakpoint426) {
+  .user {
+    gap: 7px;
+    .sidebar {
+      &__avatar {
+        display: none;
+      }
+      &__menu {
+        .item {
+          font-size: 0.9em;
+        }
+      }
+    }
   }
 }

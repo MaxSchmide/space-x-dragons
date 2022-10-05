@@ -15,7 +15,7 @@ function App() {
           <Route path='/auth' element={<Authpage />} />
           <Route path='/signup' element={<Signpage />} />
           <Route
-            path='personal'
+            path='/personal'
             element={
               <PrivateRoute>
                 <Personalpage />

@@ -1,7 +1,21 @@
+@import "../../vars";
+
 .cards-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
+}
+
+@media (max-width: $breakpoint768) {
+  .cards-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: $breakpoint426) {
+  .cards-container {
+    gap: 20px;
+  }
 }

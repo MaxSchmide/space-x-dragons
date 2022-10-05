@@ -27,6 +27,7 @@ const Navbar = () => {
   };
   const handleSidebarClick = (e) => {
     e.preventDefault();
+
     setSidebar(!sidebar);
   };
   return (

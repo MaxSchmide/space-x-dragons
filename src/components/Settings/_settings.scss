@@ -1,0 +1,57 @@
+@import "../../vars";
+.settings-box {
+  width: 70%;
+  margin: 0 auto;
+
+  .title {
+    font-size: 2em;
+    text-align: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 15px;
+      position: relative;
+      input {
+        border: 1px solid $secondary;
+        padding: 10px 15px;
+        border-radius: 5px;
+        outline: none;
+        &.error {
+          border-color: red;
+        }
+      }
+      .feedback {
+        bottom: -20px;
+        left: 30px;
+        position: absolute;
+        color: rgb(235, 54, 54);
+        font-size: 14px;
+      }
+    }
+    button[type="submit"] {
+      background-color: $primary;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px auto;
+      border: none;
+      cursor: pointer;
+      width: 60%;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: $breakpoint426) {
+  .settings-box {
+    margin: 0;
+    width: 100%;
+  }
+}

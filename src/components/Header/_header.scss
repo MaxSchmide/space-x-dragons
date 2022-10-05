@@ -15,10 +15,11 @@ header {
 }
 @media (max-width: $breakpoint426) {
   header {
-    height: 150px;
+    height: 100px;
     margin-bottom: 0;
   }
   .logo {
+    padding-left: 30px;
     img {
       width: 250px;
     }

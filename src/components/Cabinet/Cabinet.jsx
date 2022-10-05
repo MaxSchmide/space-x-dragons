@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Favourites from "../Favourites/Favourites";
 import Settings from "../Settings/Settings";
 import "./_cabinet.scss";
@@ -18,7 +18,11 @@ const Cabinet = () => {
     <div className='user'>
       <aside className='sidebar'>
         <section className='sidebar__avatar'>
-          <img src={user?.photo} alt='' />
+          {user?.photo ? (
+            <img src={user?.photo} alt='' />
+          ) : (
+            <div className='altlogo'>?</div>
+          )}
         </section>
         <section className='sidebar__menu'>
           <div onClick={openFavs} className={`item ${mainContent && "active"}`}>

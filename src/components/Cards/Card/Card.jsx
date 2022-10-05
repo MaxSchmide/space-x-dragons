@@ -60,7 +60,7 @@ const Card = ({ item }) => {
         <div className='card__title'>
           {name}
           <div className='favourites'>
-            {isFav ? (
+            {isFav && user ? (
               <AiFillStar onClick={removeFromFavourite} />
             ) : (
               <AiOutlineStar onClick={addToFavourite} />

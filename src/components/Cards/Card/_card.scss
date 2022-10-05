@@ -64,3 +64,53 @@
     }
   }
 }
+
+@media (max-width: $breakpoint768) {
+  .card {
+    width: 250px;
+    &__photo {
+      .logo {
+        width: 200px;
+        height: 150px;
+      }
+    }
+    &__title {
+      width: 100%;
+      font-size: 1.5em;
+      .favourites {
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 35px;
+      }
+    }
+    &__details {
+      .date,
+      .weight,
+      .height {
+        font-size: 0.8em;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    &__link {
+      font-style: italic;
+      margin-bottom: 5px;
+      a {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+    &__description {
+      width: 80%;
+    }
+    &__button {
+      margin: 20px 0 10px 0;
+      .btn {
+        @include signBtn;
+      }
+    }
+  }
+}

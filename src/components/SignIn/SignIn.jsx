@@ -54,31 +54,30 @@ const SignIn = () => {
   const loginWithUser = async () => {
     try {
       dispatch(authRequest());
-      if (auth.currentUser.emailVerified) {
-        await signInWithEmailAndPassword(
-          auth,
-          userProps.email,
-          userProps.password
-        ).then((result) => {
-          const token = result.user.accessToken;
-          const profile = {
-            name: result.user.displayName,
-            photo: result.user.photoURL,
-          };
-          sessionStorage.setItem("dsx-access-token", token);
-          sessionStorage.setItem("dsx-profile", JSON.stringify(profile));
-          dispatch(authSuccess({ token, profile }));
-          navigate("/");
-        });
-      } else {
-        toast.error("Confirm your E-mail!");
-      }
+
+      await signInWithEmailAndPassword(
+        auth,
+        userProps.email,
+        userProps.password
+      ).then((result) => {
+        const token = result.user.accessToken;
+        const profile = {
+          name: result.user.displayName,
+          photo: result.user.photoURL,
+        };
+        sessionStorage.setItem("dsx-access-token", token);
+        sessionStorage.setItem("dsx-profile", JSON.stringify(profile));
+        dispatch(authSuccess({ token, profile }));
+        navigate("/");
+      });
     } catch (err) {
       if (err.message.includes("user")) {
         toast.error("Wrong E-mail. User not found");
       }
       if (err.message.includes("password")) {
         toast.error("Wrong password");
+      } else {
+        console.log(err);
       }
     }
   };
